@@ -1,6 +1,67 @@
-import Link from "next/link";import {Button} from "@/components/ui/button";import {ArrowRight} from "lucide-react";
-export const Eyebrow=({children}:{children:React.ReactNode})=><p className="mb-3 text-sm font-medium text-brand">{children}</p>;
-export const Wrap=({children,className=""}:{children:React.ReactNode;className?:string})=><section className={`mx-auto max-w-6xl px-5 py-20 md:py-28 ${className}`}>{children}</section>;
-export const H=({children}:{children:React.ReactNode})=><h2 className="max-w-3xl text-3xl font-semibold tracking-tight md:text-5xl">{children}</h2>;
-export function CTA({title="Have an idea in mind? Let's build it together.",text="Tell us what you're working on and let's explore how Intera can help."}:{title?:string;text?:string}){return <section className="px-5 pb-20"><div className="mx-auto max-w-6xl rounded-3xl bg-ink p-10 text-white md:p-16"><h2 className="max-w-2xl text-3xl font-semibold tracking-tight md:text-5xl">{title}</h2><p className="mt-4 max-w-xl text-white/70">{text}</p><Button asChild variant="light" className="mt-8"><Link href="/contact">Start a Conversation <ArrowRight size={16}/></Link></Button></div></section>}
-export const Visual=({label}:{label:string})=><div role="img" aria-label={`${label} placeholder visual`} className="aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-gradient-to-br from-tint to-wash p-5"><div className="h-full rounded-xl border border-line bg-white p-4"><div className="mb-3 flex gap-1.5">{[0,1,2].map(i=><span key={i} className="size-2 rounded-full bg-line"/>)}</div><div className="h-3 w-1/2 rounded bg-ink/80"/><div className="mt-3 h-2 w-3/4 rounded bg-line"/><div className="mt-6 grid grid-cols-3 gap-3"><div className="h-20 rounded bg-tint"/><div className="h-20 rounded bg-wash"/><div className="h-20 rounded bg-brand/80"/></div></div></div>;
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { ArrowRight } from "lucide-react";
+export const Eyebrow = ({ children }: { children: React.ReactNode }) => (
+  <p className="mb-3 text-sm font-medium text-brand">{children}</p>
+);
+export const Wrap = ({
+  children,
+  className = "",
+}: {
+  children: React.ReactNode;
+  className?: string;
+}) => (
+  <section className={`mx-auto max-w-6xl px-5 py-20 md:py-28 ${className}`}>
+    {children}
+  </section>
+);
+export const H = ({ children }: { children: React.ReactNode }) => (
+  <h2 className="max-w-3xl text-3xl font-semibold tracking-tight md:text-5xl">
+    {children}
+  </h2>
+);
+export function CTA({
+  title = "Have an idea in mind? Let's build it together.",
+  text = "Tell us what you're working on and let's explore how Intera can help.",
+}: {
+  title?: string;
+  text?: string;
+}) {
+  return (
+    <section className="px-5 pb-20">
+      <div className="mx-auto max-w-6xl rounded-3xl bg-ink p-10 text-white md:p-16">
+        <h2 className="max-w-2xl text-3xl font-semibold tracking-tight md:text-5xl">
+          {title}
+        </h2>
+        <p className="mt-4 max-w-xl text-white/70">{text}</p>
+        <Button asChild variant="light" className="mt-8">
+          <Link href="/contact">
+            Start a Conversation <ArrowRight size={16} />
+          </Link>
+        </Button>
+      </div>
+    </section>
+  );
+}
+export const Visual = ({ label }: { label: string }) => (
+  <div
+    role="img"
+    aria-label={`${label} placeholder visual`}
+    className="aspect-[4/3] overflow-hidden rounded-2xl border border-line bg-gradient-to-br from-tint to-wash p-5"
+  >
+    <div className="h-full rounded-xl border border-line bg-white p-4">
+      <div className="mb-3 flex gap-1.5">
+        {[0, 1, 2].map((i) => (
+          <span key={i} className="size-2 rounded-full bg-line" />
+        ))}
+      </div>
+      <div className="h-3 w-1/2 rounded bg-ink/80" />
+      <div className="mt-3 h-2 w-3/4 rounded bg-line" />
+      <div className="mt-6 grid grid-cols-3 gap-3">
+        <div className="h-20 rounded bg-tint" />
+        <div className="h-20 rounded bg-wash" />
+        <div className="h-20 rounded bg-brand/80" />
+      </div>
+    </div>
+  </div>
+);

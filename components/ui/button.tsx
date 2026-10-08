@@ -1,3 +1,29 @@
-import * as React from "react";import {Slot} from "@radix-ui/react-slot";import {cva,type VariantProps} from "class-variance-authority";import {cn} from "@/lib/utils";
-const v=cva("inline-flex items-center justify-center gap-2 rounded-full text-sm font-medium transition-all disabled:opacity-50 disabled:pointer-events-none",{variants:{variant:{default:"bg-ink text-white hover:bg-brand",outline:"border border-line bg-white hover:border-ink",light:"bg-white text-ink hover:bg-tint"},size:{default:"h-11 px-6",sm:"h-9 px-4"}},defaultVariants:{variant:"default",size:"default"}});
-export function Button({className,variant,size,asChild,...p}:React.ComponentProps<"button">&VariantProps<typeof v>&{asChild?:boolean}){const C=asChild?Slot:"button";return <C className={cn(v({variant,size}),className)} {...p}/>}
+import * as React from "react";
+import { Slot } from "@radix-ui/react-slot";
+import { cva, type VariantProps } from "class-variance-authority";
+import { cn } from "@/lib/utils";
+const v = cva(
+  "inline-flex items-center justify-center gap-2 rounded-full text-sm font-medium transition-all disabled:opacity-50 disabled:pointer-events-none",
+  {
+    variants: {
+      variant: {
+        default: "bg-ink text-white hover:bg-brand",
+        outline: "border border-line bg-white hover:border-ink",
+        light: "bg-white text-ink hover:bg-tint",
+      },
+      size: { default: "h-11 px-6", sm: "h-9 px-4" },
+    },
+    defaultVariants: { variant: "default", size: "default" },
+  },
+);
+export function Button({
+  className,
+  variant,
+  size,
+  asChild,
+  ...p
+}: React.ComponentProps<"button"> &
+  VariantProps<typeof v> & { asChild?: boolean }) {
+  const C = asChild ? Slot : "button";
+  return <C className={cn(v({ variant, size }), className)} {...p} />;
+}

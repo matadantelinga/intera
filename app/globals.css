@@ -1,7 +1,36 @@
 @import "tailwindcss";
-@theme{--color-ink:#0b1630;--color-mute:#5b6678;--color-line:#e4e8f0;--color-wash:#f5f8fd;--color-brand:#2563eb;--color-tint:#e8f0ff;--font-sans:var(--font-inter),ui-sans-serif,system-ui,sans-serif}
-body{color:var(--color-ink);background:#fff}
-@keyframes up{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-.rise{animation:up .6s ease both}
-@media(prefers-reduced-motion:reduce){.rise{animation:none}}
-:focus-visible{outline:2px solid var(--color-brand);outline-offset:2px}
+@theme {
+  --color-ink: #0b1630;
+  --color-mute: #5b6678;
+  --color-line: #e4e8f0;
+  --color-wash: #f5f8fd;
+  --color-brand: #2563eb;
+  --color-tint: #e8f0ff;
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+}
+body {
+  color: var(--color-ink);
+  background: #fff;
+}
+@keyframes up {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.rise {
+  animation: up 0.6s ease both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .rise {
+    animation: none;
+  }
+}
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
